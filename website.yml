@@ -1,0 +1,46 @@
+---
+- name: deploy website
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install Apache HTTP Server
+      yum:
+        name: httpd
+        state: present
+
+    - name: Install Git
+      yum:
+        name: git
+        state: present
+
+    - name: Ensure /var/www/html directory exists
+      file:
+        path: /var/www/html
+        state: directory
+        mode: 0755
+
+    - name: Change directory to /var/www/html/
+      shell: cd /var/www/html/
+
+    - name: Clone repository
+      git:
+        repo: https://github.com/ezermbu/ansible-ec2-website-deployment.git
+        dest: /tmp/repo_clone
+        force: yes
+
+    - name: Copy index.html
+      copy:
+        src: /tmp/repo_clone/index.html
+        dest: /var/www/html/index.html
+        remote_src: true
+
+    - name: Remove cloned directory
+      file:
+        path: /tmp/repo_clone
+        state: absent
+
+    - name: Start Apache HTTP Server
+      service:
+        name: httpd
+        state: started
+        enabled: yes
