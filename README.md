@@ -1,6 +1,6 @@
 # Deploying a Website on Apache Web Servers Across Multiple EC2 Instances
 
-![Screenshot(22)](https://github.com/ezermbu/ansible-ec2-website-deployment/assets/47481604/eeb93ad7-30fe-484e-98af-8ebe8d58f885)
+
 
 ## Introduction
 This project aims to guide users through deploying a website on Apache web servers across multiple EC2 instances using Ansible playbooks. By automating the deployment process, this approach eliminates the need for manual installation on each server, streamlining the setup and ensuring consistency.
