@@ -72,3 +72,4 @@ For any inquiries or feedback, please contact:
 If you found this guide helpful, please consider leaving feedback in the comments section and showing your support by following and applauding the project. Your feedback is greatly appreciated!
 
 Thank you.
+Medium blog : https://medium.com/@ezermbu3/deploying-a-website-on-apache-web-servers-across-multiple-ec2-instances-8d36eee65501
